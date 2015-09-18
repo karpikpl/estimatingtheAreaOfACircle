@@ -1,0 +1,1 @@
+python kattisSubmit.py -pestimatingtheareaofacircle KattisSolution\Program.cs KattisSolution\InputOutput.cs -f
