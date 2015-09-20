@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Text;
 
 namespace KattisSolution.IO
 {
@@ -83,7 +84,7 @@ namespace KattisSolution.IO
 
         public float NextFloat()
         {
-            return float.Parse(Next());
+            return float.Parse(Next(), CultureInfo.InvariantCulture);
         }
 
         public double NextDouble()
@@ -112,6 +113,11 @@ namespace KattisSolution.IO
             : base(new BufferedStream(outStream))
         {
         }
+
+        //        public override IFormatProvider FormatProvider
+        //        {
+        //            get { return CultureInfo.InvariantCulture; }
+        //        }
     }
 
     public class OptimizedPositiveIntReader : IScanner
@@ -133,7 +139,7 @@ namespace KattisSolution.IO
 
                 while (c >= '0' && c <= '9')
                 {
-                    result = result*10 + c - '0';
+                    result = result * 10 + c - '0';
                     c = _reader.Read();
                     isInt = true;
                 }

@@ -4,7 +4,6 @@ using NUnit.Framework;
 
 namespace KattisSolution.Tests
 {
-    [Ignore]
     [TestFixture]
     [Category("sample")]
     public class CustomTest
@@ -13,8 +12,8 @@ namespace KattisSolution.Tests
         public void SampleTest_WithStringData_Should_Pass()
         {
             // Arrange
-            const string expectedAnswer = "50\n";
-            using (var input = new MemoryStream(Encoding.UTF8.GetBytes("10\n")))
+            const string expectedAnswer = "3.14159265358979 0\n";
+            using (var input = new MemoryStream(Encoding.UTF8.GetBytes("1.0 1 0\n0 0 0\n")))
             using (var output = new MemoryStream())
             {
                 // Act
